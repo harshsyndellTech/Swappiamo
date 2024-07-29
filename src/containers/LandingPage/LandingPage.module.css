@@ -1,0 +1,158 @@
+@import '../../styles/customMediaQueries.css';
+
+.root {
+}
+
+/* heroContainer gives the height for SectionHero */
+/* Safari has a bug with vw padding inside flexbox. Therefore we need an extra div (container) */
+/* If you've lot of content for the hero, multiple lines of text, make sure to adjust min-heights for each media breakpoint accordingly */
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  height: 90.5vh;
+  /* max-height: 650px; */
+  /* height: 77.5vh;
+  max-height: 600px; */
+  padding: 0;
+
+  @media (--viewportMedium) {
+    min-height: 500px;
+    height: 77vh;
+    max-height: none;
+  }
+
+  @media (--viewportLarge) {
+    max-height: 1000px;
+    min-height: 670px;
+    height: calc(95vh - var(--topbarHeightDesktop));
+  }
+  @media (--viewportLargeWithPaddings) {
+    max-height: 1200px;
+    min-height: 670px;
+    height: calc(100vh - var(--topbarHeightDesktop));
+  }
+}
+.title {
+  @apply --marketplaceH1FontStyles;
+  margin-top: 0;
+}
+.hero {
+  flex-grow: 1;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+
+  @media (--viewportMedium) {
+    padding-bottom: 83px;
+  }
+
+  @media (--viewportLarge) {
+    justify-content: center;
+    padding-top: 60px;
+  }
+}
+
+.sections {
+  margin: 0;
+  padding-top: 1px;
+}
+
+.section {
+  overflow: auto;
+}
+
+/* Square corners for the last section if it's even */
+.section:nth-of-type(2n):last-of-type {
+  @media (--viewportMedium) {
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+/* Every other section has a light background */
+.section:nth-of-type(2n) {
+  background-color: var(--matterColorLight);
+  @media (--viewportMedium) {
+    border-radius: 4px;
+  }
+}
+.gradientColor {
+  color: #fff !important;
+  background: #ff9e28; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ff9e28, #ff4e50); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff9e28,
+    #ff4e50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.sectionContent {
+  margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
+  width: 90vw;
+  @media (--viewportMedium) {
+    max-width: 100%;
+    margin: var(--LandingPage_sectionMarginTopMedium) 24px 60px 24px;
+  }
+
+  @media (--viewportLarge) {
+    max-width: 100%;
+    padding: 0 36px 0 36px;
+    margin: var(--LandingPage_sectionMarginTopLarge) auto 93px auto;
+  }
+
+  @media (--viewportXLarge) {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+.sectionContentFirstChild {
+  composes: sectionContent;
+  margin-top: 3vh;
+}
+
+/* A bar on top of light sections */
+.section:nth-of-type(2n) .sectionContent::before {
+  background: var(--marketplaceColor);
+  content: '';
+  display: block;
+  width: 109px;
+  height: 6px;
+
+  /* Place the bar on top of .sectionContent top margin */
+  position: relative;
+  top: calc(-1 * var(--LandingPage_sectionMarginTop));
+
+  @media (--viewportMedium) {
+    width: 192px;
+    height: 8px;
+    top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
+  }
+
+  @media (--viewportLarge) {
+    top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
+  }
+}
+.listingCards {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (--viewportMedium) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  @media (--viewportLarge) {
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.loader {
+  display: flex;
+  justify-content: center;
+}
+.error {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  color: red;
+}

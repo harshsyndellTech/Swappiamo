@@ -1,0 +1,142 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.tab {
+  margin-left: 16px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  @media (--viewportLarge) {
+    margin-left: 24px;
+  }
+}
+
+.link {
+  display: inline-block;
+  white-space: nowrap;
+  /* width: 300px !important; */
+
+  /* Font */
+  @apply --marketplaceTabNavFontStyles;
+
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  /* push tabs against bottom of tab bar */
+  margin-top: auto;
+
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  /* color: var(--matterColorDark); */
+  /* transition: var(--transitionStyleButton); */
+  background-image: url("data:image/svg+xml;utf8,<svg width='4' height='32' viewBox='0 0 4 32' xmlns='http://www.w3.org/2000/svg'><path d='M0 0h4v32H0z' fill='var(--marketplaceColorEncoded)' fill-rule='evenodd'/></svg>");
+  background-position: calc(var(--TabNav_linkWidth) + 4px) center; /* SelectedLink's width (200px) + border thickness (4px) = 204px */
+
+  &:hover {
+    /* width: 300px !important; */
+
+    text-decoration: none;
+    @media (--viewportLarge) {
+      color: rgb(235, 234, 234);
+    }
+  }
+
+  @media (--viewportLarge) {
+    width: var(--TabNav_linkWidth);
+    border-bottom-width: 0px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    /* color: #fff; */
+    padding-top: 6px; /* Drop the text to adjust it to correct baseline */
+    padding-bottom: 2px;
+    color: white;
+    &:hover {
+      width: 380px !important;
+
+      background-image: url("data:image/svg+xml;utf8,<svg width='4' height='32' viewBox='0 0 4 32' xmlns='http://www.w3.org/2000/svg'><path d='M0 0h4v32H0z' fill='var(--marketplaceColorEncoded)' fill-rule='evenodd'/></svg>");
+      background-position: right center;
+      color: var(--matterColorDark);
+    }
+  }
+}
+.inboxLink {
+  display: inline-block;
+  white-space: nowrap;
+
+  /* Font */
+  @apply --marketplaceTabNavFontStyles;
+
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  /* push tabs against bottom of tab bar */
+  margin-top: auto;
+
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  color: white;
+  transition: var(--transitionStyleButton);
+  background-image: url("data:image/svg+xml;utf8,<svg width='4' height='32' viewBox='0 0 4 32' xmlns='http://www.w3.org/2000/svg'><path d='M0 0h4v32H0z' fill='var(--marketplaceColorEncoded)' fill-rule='evenodd'/></svg>");
+  background-position: calc(var(--TabNav_linkWidth) + 4px) center; /* SelectedLink's width (200px) + border thickness (4px) = 204px */
+
+  &:hover {
+    text-decoration: none;
+    @media (--viewportLarge) {
+      color: rgb(235, 234, 234);
+    }
+  }
+
+  @media (--viewportLarge) {
+    width: var(--TabNav_linkWidth);
+    border-bottom-width: 0px;
+    margin-top: 0;
+    margin-bottom: 16px;
+    /* color: #fff; */
+    padding-top: 6px; /* Drop the text to adjust it to correct baseline */
+    padding-bottom: 2px;
+
+    &:hover {
+      background-image: url("data:image/svg+xml;utf8,<svg width='4' height='32' viewBox='0 0 4 32' xmlns='http://www.w3.org/2000/svg'><path d='M0 0h4v32H0z' fill='var(--marketplaceColorEncoded)' fill-rule='evenodd'/></svg>");
+      background-position: right center;
+      color: var(--matterColorDark);
+    }
+  }
+}
+
+.selectedLink {
+  border-bottom-color: var(--matterColorDark);
+  @media (--viewportLarge) {
+    width: 380px !important;
+    color: var(--matterColorDark);
+    width: var(--TabNav_linkWidth);
+    background-image: url("data:image/svg+xml;utf8,<svg width='4' height='32' viewBox='0 0 4 32' xmlns='http://www.w3.org/2000/svg'><path d='M0 0h4v32H0z' fill='%23000' fill-rule='evenodd'/></svg>");
+    background-position: right center;
+
+    &:hover {
+      background-image: url("data:image/svg+xml;utf8,<svg width='4' height='32' viewBox='0 0 4 32' xmlns='http://www.w3.org/2000/svg'><path d='M0 0h4v32H0z' fill='%23000' fill-rule='evenodd'/></svg>");
+      background-position: right center;
+      color: var(--matterColor);
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  @media (--viewportLarge) {
+    color: #fff;
+  }
+  text-decoration: none;
+}
+
+.accounts {
+  color: #4a4a4a;
+}

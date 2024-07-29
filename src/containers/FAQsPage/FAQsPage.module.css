@@ -1,0 +1,22 @@
+@import '../../styles/customMediaQueries.css';
+
+.heading {
+  margin: 5px 0 18px 0;
+
+  @media (--viewportMedium) {
+    margin: 8px 0 24px 0;
+    font-size: 50px;
+  }
+}
+
+.content {
+  text-align: center;
+  @media (--viewportLarge) {
+    max-width: 563px;
+  }
+}
+.subHeading {
+  @media (--viewportMedium) {
+    font-size: 22px !important;
+  }
+}

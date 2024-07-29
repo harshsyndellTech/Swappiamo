@@ -1,0 +1,233 @@
+@import '../../styles/propertySets.css';
+
+.root {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: auto;
+}
+
+.content {
+  flex-grow: 1;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* 113 for footer and an extra 67 to get scrolling work in mobile safari */
+  margin-bottom: 180px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  padding: 24px;
+  background-color: var(--matterColorLight);
+  box-shadow: var(--boxShadowTop);
+}
+
+.avatar {
+  /* Layout */
+  flex-shrink: 0;
+  margin: var(--TopbarMobileMenu_topMargin) 0 0 0;
+}
+
+.greeting {
+  /* Font */
+  @apply --marketplaceH1FontStyles;
+  margin-bottom: 1px;
+  margin-top: 16px;
+}
+
+.logoutButton {
+  @apply --marketplaceLinkStyles;
+  /* Logout font is smaller and gray since the action is not recommended. */
+  @apply --marketplaceH3FontStyles;
+  color: var(--matterColorAnti);
+
+  /* Position component */
+  width: initial;
+  margin: 4px 0 6px 0;
+  padding: 0;
+}
+
+.inbox {
+  /* Font */
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceColor);
+  position: relative;
+
+  margin-top: 0px;
+  margin-bottom: 13px;
+}
+.listingLink {
+  /* Font */
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceColorDark);
+  position: relative;
+
+  margin-top: auto;
+  margin-bottom: 8px;
+}
+
+.navigationLink {
+  /* Font */
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceColor);
+
+  /* Layout */
+  margin-top: 0;
+  margin-bottom: 11px;
+}
+.invitationLink {
+  /* Font */
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceColor);
+
+  /* Layout */
+  margin-top: 0;
+  margin-bottom: 11px;
+}
+.purchase {
+  /* Font */
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceColorDark);
+
+  /* Layout */
+  margin-top: 0;
+  margin-bottom: 11px;
+}
+.thirdLink {
+  /* Font */
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceEventColor);
+
+  /* Layout */
+  margin-top: 0;
+  margin-bottom: 11px;
+}
+.currentPageLink {
+  color: var(--marketplaceColorDark);
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 4px;
+  right: -26px;
+
+  /* This is inside a link - remove underline */
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.createNewListingLink {
+  @apply --marketplaceButtonStyles;
+}
+
+.authenticationGreeting {
+  /* Font */
+  @apply --marketplaceH1FontStyles;
+
+  margin-bottom: 24px;
+  margin-top: var(--TopbarMobileMenu_topMargin);
+}
+.authenticationLinks {
+  white-space: nowrap;
+}
+
+.signupLink {
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--marketplaceColor);
+}
+.loginLink {
+  text-decoration: none;
+  white-space: nowrap;
+  color: var(--marketplaceColor);
+}
+
+.currentPage {
+  color: var(--matterColorDark);
+
+  /* black left border */
+  border-left: 5px solid black;
+  margin-left: -24px;
+  padding-left: 19px;
+}
+
+.createListingLink {
+  @apply --marketplaceH2FontStyles;
+  color: var(--marketplaceColorDark);
+  position: relative;
+  right: 10px;
+  margin-top: auto;
+  margin-bottom: 13px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.subHeading {
+  margin: 0;
+}
+
+.profileMenuContent {
+  min-width: 276px;
+  padding-top: 20px;
+}
+
+.menuItemBorder {
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  height: calc(100% - 4px);
+  width: 0;
+  transition: width var(--transitionStyleButton);
+}
+
+.profileSettingsLink,
+.yourListingsLink,
+.jobseekerPopupLink,
+.servicePopupLink {
+  @apply --marketplaceH4FontStyles;
+  position: relative;
+  display: block;
+
+  /* Dimensions */
+  width: 100%;
+  margin: 0;
+  padding: 4px 24px;
+
+  /* Layout details */
+  color: var(--matterColor);
+  text-align: left;
+  transition: var(--transitionStyleButton);
+
+  &:hover {
+    color: var(--matterColorDark);
+    text-decoration: none;
+
+    & .menuItemBorder {
+      width: 6px;
+      background-color: var(--marketplaceColor);
+    }
+  }
+
+  @media (--viewportMedium) {
+    margin: 0;
+  }
+}
+
+.servicePopupLink:hover,
+.jobseekerPopupLink:hover {
+  text-decoration: none;
+  color: var(--matterColorDark);
+  text-decoration: none;
+
+  & .menuItemBorder {
+    width: 6px;
+    background-color: var(--marketplaceColor);
+  }
+}

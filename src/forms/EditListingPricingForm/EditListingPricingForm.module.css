@@ -1,0 +1,47 @@
+.root {
+  /* Dimensions */
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+
+  @media (--viewportMedium) {
+    padding-top: 2px;
+  }
+}
+
+.error {
+  color: var(--failColor);
+}
+
+.priceInput {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.submitButton {
+  margin-top: auto;
+  margin-bottom: 24px;
+
+  @media (--viewportLarge) {
+    display: inline-block;
+    width: 241px;
+    margin-top: 100px;
+  }
+}
+
+.formRow {
+  margin-bottom: 38px;
+}
+.payOutNote {
+  color: #ff0000;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

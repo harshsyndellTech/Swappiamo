@@ -1,0 +1,35 @@
+@import '../../styles/customMediaQueries.css';
+@import '../../styles/propertySets.css';
+
+.root {
+  background-color: var(--matterColorLight);
+}
+.content {
+  width: calc(100% - 48px);
+  margin: 12px 24px 24px 24px;
+  margin-top: 2rem;
+
+  @media (--viewportMedium) {
+    max-width: 800px;
+    margin: 55px auto 56px auto;
+  }
+}
+
+.heading {
+  margin-bottom: 0;
+}
+
+.subheading {
+  margin-top: 1rem;
+  color: var(--matterColorAnti);
+  line-height: 1.5;
+}
+
+.inviteFormContainer {
+  width: min(600px, 100%);
+  margin: 0 auto;
+}
+
+.submitButtonWrapper {
+  margin-top: 1.5rem;
+}

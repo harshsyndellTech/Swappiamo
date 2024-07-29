@@ -1,0 +1,62 @@
+.root {
+  position: relative;
+}
+.textbox {
+  position: absolute;
+  top: 58%;
+}
+.textboxError {
+  position: absolute;
+  top: 36%;
+}
+.input {
+  border-bottom-color: var(--attentionColor);
+}
+
+.inputSuccess {
+  border-bottom-color: var(--successColor);
+}
+
+.inputError {
+  border-bottom-color: var(--failColor);
+}
+
+.textarea {
+}
+
+.pricingClass {
+  padding: 0 12px !important;
+  /* font-size: 22px; */
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+
+  & svg {
+    height: 16px;
+    width: 16px;
+  }
+
+  &:hover {
+    & svg {
+      color: var(--marketplaceColor);
+    }
+  }
+}
+
+.copyTooltip {
+  line-height: 1.8;
+}
+.searchIcon {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  font-size: 24px;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  color: var(--matterColorAnti);
+}

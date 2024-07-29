@@ -1,0 +1,5 @@
+@import '../../styles/propertySets.css';
+@import '../../styles/customMediaQueries.css';
+.imageMobile {
+  height: 42px;
+}

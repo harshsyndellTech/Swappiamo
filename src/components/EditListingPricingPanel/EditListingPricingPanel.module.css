@@ -1,0 +1,39 @@
+.root {
+  flex-grow: 1;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 11px 24px 0 24px;
+}
+
+.form {
+  flex-grow: 1;
+}
+
+.title {
+  margin-bottom: 19px;
+
+  @media (--viewportMedium) {
+    margin-bottom: 18px;
+    padding: 1px 0 7px 0;
+  }
+}
+
+.priceCurrencyInvalid {
+  color: var(--failColor);
+}
+.note {
+  margin-top: 0;
+  color: #ff0000;
+}
+.payOutNote {
+  color: #ff0000;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}

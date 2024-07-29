@@ -1,0 +1,185 @@
+@import '../../styles/customMediaQueries.css';
+.root {
+  display: flex;
+  justify-content: center;
+}
+.locationContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  width: 100%;
+  padding-top: 1rem;
+  @media (--viewportMedium) {
+    grid-template-columns: 1fr 1fr 1fr 0.2fr;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    width: 100%;
+    margin: 1rem 0;
+    align-self: center;
+    padding: 1rem;
+  }
+  @media (--viewportLarge) {
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+.border {
+  display: flex;
+  justify-content: flex-end;
+  background-color: lightgray;
+  height: 100%;
+  width: 2px;
+}
+.searchPredictions {
+  position: absolute;
+  width: 300px;
+  padding-bottom: var(--locationAutocompleteBottomPadding);
+  top: var(--LocationAutocompleteInput_inputHeight);
+  left: 0;
+  background-color: var(--marketplaceColor);
+  border-bottom-left-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  box-shadow: var(--boxShadowPopup);
+  z-index: calc(var(--zIndexPopup) + 1);
+}
+.searchPredictionsAttribution {
+}
+.searchButton {
+  min-height: 46px;
+  width: auto;
+  background-color: var(--marketplaceColorDark);
+  color: var(--matterColorLight);
+  margin-top: 0.5rem;
+  cursor: pointer;
+  @media (--viewportMedium) {
+    width: 80px;
+    margin-top: 0;
+  }
+  &:hover {
+    background-color: var(--marketplaceColorDark);
+    border: 1px solid var(--marketplaceColorDark);
+  }
+}
+.label {
+  margin: 0;
+  display: none;
+  font-weight: 600;
+  @media (--viewportMedium) {
+    display: block;
+  }
+}
+
+.landingPageSearch {
+  margin: 2rem;
+}
+
+.searchField {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.searchInputIcon {
+  box-sizing: content-box;
+  padding-left: 4px;
+  margin-top: 2px;
+
+  /* display: none; */
+  width: 24px;
+  align-self: stretch;
+  border-bottom: 2px solid var(--matterColorLight);
+  background-color: var(--matterColorLight);
+}
+
+.searchInput {
+  flex-grow: 1;
+  /* height: 69px; */
+  padding-left: 0px;
+  margin: 0;
+  line-height: unset;
+  border-bottom-width: 2px;
+  border-bottom-color: var(--matterColorLight);
+
+  /* Safari bugfix: without this Safari will print placeholder to a wrong place */
+  &::-webkit-input-placeholder {
+    line-height: normal;
+  }
+  @media (--viewportMedium) {
+    padding-left: 10px;
+  }
+  &:hover,
+  &:focus {
+    border-bottom-color: var(--matterColorLight);
+    outline: none;
+  }
+
+  &:hover::placeholder,
+  &:focus::placeholder {
+    color: var(--matterColor);
+  }
+
+  &::placeholder {
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    /* font-weight: var(--fontWeightRegular); */
+    transition: var(--transitionStyleButton);
+  }
+}
+.searchInputRoot {
+  position: relative;
+  display: flex;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 0.12rem;
+}
+.rootField input {
+  border-bottom-color: #ffffff;
+  &:hover,
+  &:focus {
+    border-bottom-color: #ffffff;
+  }
+}
+.rootField {
+  border: 1px solid lightgray;
+  /* border-bottom-color: var(--matterColorAnti); */
+  border-radius: 4px;
+  padding: 0.12rem;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.searchIcon {
+  font-size: 25px;
+  fill: var(--marketplaceColorDark);
+}
+.select {
+  margin-bottom: 1rem;
+  @media (--viewportMedium) {
+    margin-bottom: 0;
+  }
+}
+.categoryIcon {
+  font-size: 22px;
+  margin-right: 0.25rem;
+}
+.serviceLabel {
+  margin: 0;
+  color: var(--marketplaceColorDark);
+  cursor: pointer;
+}
+.eventLabel {
+  margin: 0;
+  color: var(--marketplaceEventColor);
+  cursor: pointer;
+}
+.productLabel {
+  margin: 0;
+  color: var(--marketplaceColor);
+  cursor: pointer;
+}
+.vacanzeLabel {
+  margin: 0;
+  color: var(--vacanzeColor);
+  cursor: pointer;
+}

@@ -1,0 +1,574 @@
+@import '../../styles/propertySets.css';
+
+/* Animation for the hero elements */
+
+@keyframes animationTitle {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/* Shared animation rules */
+.animation {
+  animation-name: animationTitle;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+
+  visibility: hidden;
+  opacity: 1;
+  position: relative;
+}
+
+.root {
+  @apply --backgroundImage;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  /* Text positioning is done with paddings */
+}
+
+.heroContent {
+  /* margin: 0 24px 0 24px; */
+  margin: 0 40px 0 40px;
+  @media (--viewportMedium) {
+    margin: 0 7.5vw 0 7.5vw;
+  }
+
+  @apply --marketplaceHeroTitleFontStyles;
+
+  /* Special viewport for adjusting the heroContent's placement */
+
+  @media only screen and (min-width: 1025px) and (max-width: 1366px) {
+    padding: 0 36px 0 36px;
+  }
+
+  @media only screen and (min-width: 1367px) {
+    margin: 0 auto;
+    max-width: calc(1052px + 36px + 36px);
+    width: 100%;
+    padding: 0 36px 0 36px;
+  }
+}
+
+.heroMainTitle {
+  color: var(--matterColorDark);
+
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin-bottom: 17px;
+
+  composes: animation;
+  animation-delay: 0.5s;
+
+  @media (--viewportMedium) {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var(--matterColor);
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+  }
+}
+
+.heroSubTitle {
+  @apply --marketplaceH4FontStyles;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  color: var(--matterColorDark);
+  margin: 0 0 20px 0;
+
+  composes: animation;
+  animation-delay: 0.65s;
+
+  @media (--viewportMedium) {
+    font-size: 1.5rem;
+    color: var(--matterColor);
+    max-width: var(--SectionHero_desktopTitleMaxWidth);
+    margin: 0 0 47px 0;
+  }
+}
+
+.heroButton {
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  font-size: 1.2rem;
+
+  animation-delay: 0.8s;
+
+  @media (--viewportMedium) {
+    display: block;
+    width: 260px;
+  }
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  @media (--viewportMedium) {
+    flex-direction: row;
+  }
+}
+.heroButtonEvent {
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  font-size: 1.2rem;
+  background-color: var(--marketplaceEventColor);
+  animation-delay: 0.8s;
+  min-height: 50px;
+  height: 50px;
+  padding: 14px 0 14px 0;
+  align-self: center;
+
+  &:hover {
+    background-color: var(--marketplaceEventColor);
+  }
+  @media (--viewportMedium) {
+    display: block;
+    min-height: 59px;
+    padding: 20px 0 20px 0;
+    width: 220px;
+  }
+}
+.heroButtonService {
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  font-size: 1.2rem;
+  background-color: var(--marketplaceColorDark);
+  animation-delay: 0.8s;
+  min-height: 50px;
+  height: 50px;
+  padding: 14px 0 14px 0;
+  align-self: center;
+  &:hover {
+    background-color: var(--marketplaceColorDark);
+  }
+  @media (--viewportMedium) {
+    display: block;
+    min-height: 59px;
+    padding: 20px 0 20px 0;
+    width: 220px;
+  }
+}
+.heroButtonProduct {
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  font-size: 1.2rem;
+  background-color: var(--marketplaceColor);
+  animation-delay: 0.8s;
+  min-height: 50px;
+  height: 50px;
+  padding: 14px 0 14px 0;
+  align-self: center;
+  &:hover {
+    background-color: var(--marketplaceColor);
+  }
+  @media (--viewportMedium) {
+    display: block;
+    min-height: 59px;
+    padding: 20px 0 20px 0;
+    width: 220px;
+  }
+}
+.heroButtonVacanze {
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  font-size: 1.2rem;
+  background-color: var(--vacanzeColor);
+  animation-delay: 0.8s;
+  min-height: 50px;
+  height: 50px;
+  padding: 14px 0 14px 0;
+  align-self: center;
+  &:hover {
+    background-color: var(--vacanzeColor);
+  }
+  @media (--viewportMedium) {
+    display: block;
+    min-height: 59px;
+    padding: 20px 0 20px 0;
+    width: 220px;
+  }
+}
+.heroButtonVintage {
+  @apply --marketplaceButtonStyles;
+  composes: animation;
+  font-size: 1.2rem;
+  background-color: var(--vintageColor);
+  animation-delay: 0.8s;
+  min-height: 50px;
+  height: 50px;
+  padding: 14px 0 14px 0;
+  align-self: center;
+  &:hover {
+    background-color: var(--vintageColor);
+  }
+  @media (--viewportMedium) {
+    display: block;
+    min-height: 59px;
+    padding: 20px 0 20px 0;
+    width: 220px;
+  }
+}
+.yogaImage {
+  position: absolute;
+  top: 15%;
+  width: 25%;
+  left: 40%;
+  animation: rotateAnimation 5s ease-out;
+
+  @media (--viewportMedium) {
+    top: 20%;
+    width: 18%;
+    left: 70%;
+    animation: yogaImage 5s ease-out;
+  }
+}
+@keyframes yogaImage {
+  50% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+}
+.relexImage {
+  position: absolute;
+  top: 36%;
+  width: 20%;
+  left: 52%;
+  animation: relaxImageMobile 5s ease-out;
+
+  @media (--viewportMedium) {
+    top: 30%;
+    width: 10%;
+    left: 50%;
+    animation: relexImageDesktop 5s ease-out;
+  }
+  @media (--viewportLarge) {
+    top: 72%;
+    width: 12%;
+    left: 50%;
+    animation: relexImageDesktop 5s ease-out;
+  }
+}
+@keyframes relaxImageMobile {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes relexImageDesktop {
+  0% {
+    top: 40%;
+    width: 15%;
+    left: 50%;
+  }
+  50% {
+    top: 30%;
+    width: 10%;
+    left: 50%;
+  }
+  100% {
+    top: 72%;
+    width: 12%;
+    left: 50%;
+  }
+}
+.goicoImage {
+  position: absolute;
+  top: 12%;
+  width: 25%;
+  left: 5%;
+  animation: goicoImageMobile 5s ease-out;
+  @media (--viewportMedium) {
+    top: 10%;
+    width: 12%;
+    left: 1%;
+    animation: goicoImageDesktop 5s ease-out;
+  }
+}
+@keyframes goicoImageMobile {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes goicoImageDesktop {
+  0% {
+    top: 10%;
+    width: 20%;
+    left: 10%;
+  }
+  50% {
+    top: 10%;
+    width: 12%;
+    left: 1%;
+  }
+  100% {
+    top: 10%;
+    width: 12%;
+    left: 1%;
+  }
+}
+.valoreImage {
+  position: absolute;
+  top: 45%;
+  width: 18%;
+  left: 68%;
+  animation: valoreImageMobile 5s ease-out;
+  @media (--viewportMedium) {
+    top: 60%;
+    width: 14%;
+    left: 80%;
+    animation: valoreImage 5s ease-out;
+  }
+}
+@keyframes valoreImage {
+  0% {
+    top: 45%;
+    width: 15%;
+    left: 68%;
+  }
+  50% {
+    top: 60%;
+    width: 14%;
+    left: 80%;
+  }
+  100% {
+    top: 60%;
+    width: 14%;
+    left: 80%;
+  }
+}
+@keyframes valoreImageMobile {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.greenImage {
+  position: absolute;
+  top: 15%;
+  width: 18%;
+  left: 80%;
+  animation: bounce-down 5s ease-out;
+
+  @media (--viewportMedium) {
+    top: 40%;
+    width: 8%;
+    left: 90%;
+    animation: bounce-1 5s ease-out;
+  }
+}
+.redImage {
+  position: absolute;
+  top: 25%;
+  width: 18%;
+  left: 68%;
+  animation: bounce-1 5s ease-out;
+  @media (--viewportMedium) {
+    top: 20%;
+    width: 8%;
+    left: 60%;
+    animation: bounce-down 5s ease-out;
+  }
+}
+.orangeImage {
+  position: absolute;
+  top: 50%;
+  width: 12%;
+  left: 20%;
+  /* top: 30%;
+  width: 15%;
+  left: 20%; */
+  animation: bounce-1 5s ease-out;
+  @media (--viewportMedium) {
+    top: 50%;
+    width: 8%;
+    left: 74%;
+    animation: bounce-down 5s ease-out;
+  }
+  @media (--viewportLarge) {
+    top: 65%;
+    width: 8%;
+    left: 70%;
+    animation: bounce-down 5s ease-out;
+  }
+}
+.whiteImage {
+  position: absolute;
+  top: 35%;
+  width: 17%;
+  left: 82%;
+  animation: bounce-1 5s ease-out;
+  @media (--viewportMedium) {
+    top: 15%;
+    width: 8%;
+    left: 90%;
+    animation: bounce-down 5s ease-out;
+  }
+}
+.arteImage {
+  position: absolute;
+  top: 40%;
+  width: 18%;
+  left: 6%;
+  animation: rotateAnimation 5s ease-out;
+  @media (--viewportMedium) {
+    top: 15%;
+    width: 10%;
+    left: 20%;
+    animation: yogaImage 5s ease-out;
+  }
+  @media (--viewportLarge) {
+    top: 40%;
+    width: 8%;
+    left: 2%;
+    animation: yogaImage 5s ease-out;
+  }
+}
+
+.foodImage {
+  position: absolute;
+  top: 40%;
+  width: 18%;
+  left: 32%;
+  animation: foodImageMobile 5s ease-out;
+  @media (--viewportMedium) {
+    top: 15%;
+    width: 10%;
+    left: 40%;
+    animation: foodImageDesktop 5s ease-out;
+  }
+}
+
+@keyframes foodImageDesktop {
+  0% {
+    top: 45%;
+    width: 10%;
+    left: 35%;
+  }
+  50% {
+    top: 35%;
+    width: 10%;
+    left: 37%;
+  }
+  100% {
+    top: 15%;
+    width: 10%;
+    left: 40%;
+  }
+}
+@keyframes foodImageMobile {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.fotoImage {
+  position: absolute;
+  /* top: 50%;
+  width: 12%;
+  left: 20%; */
+  top: 28%;
+  width: 20%;
+  left: 20%;
+  animation: fotoImageMobile 5s ease-out;
+  @media (--viewportMedium) {
+    top: 30%;
+    width: 10%;
+    left: 9%;
+    animation: fotoImage 5s ease-out;
+  }
+  @media (--viewportLarge) {
+    top: 66%;
+    width: 14%;
+    left: 2%;
+    animation: fotoImage 5s ease-out;
+  }
+}
+@keyframes fotoImage {
+  0% {
+    top: 30%;
+    width: 15%;
+    left: 20%;
+  }
+  50% {
+    top: 30%;
+    width: 10%;
+    left: 9%;
+  }
+  100% {
+    top: 66%;
+    width: 14%;
+    left: 2%;
+  }
+}
+@keyframes fotoImageMobile {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/* @keyframes fotoImageMobile {
+  0% {
+    top: 20%;
+    width: 20%;
+    left: 20%;
+  }
+  50% {
+    top: 25%;
+    width: 17%;
+    left: 20%;
+  }
+  100% {
+    top: 30%;
+    width: 18%;
+    left: 20%;
+  }
+} */
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bounce-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

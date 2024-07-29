@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.reveal {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border-radius: 50%;
+  background: linear-gradient(
+        0deg,
+        rgb(230 194 0/50%) 30%,
+        #0000 0 70%,
+        var(--marketplaceColorLight) 0
+      )
+      50%/8% 100%,
+    linear-gradient(90deg, rgb(230 194 0/25%) 30%, #0000 0 70%, var(--marketplaceColor) 0) 50%/100%
+      8%;
+  background-repeat: no-repeat;
+  animation: s3 1s infinite steps(12);
+}
+.reveal::before,
+.reveal::after {
+  content: '';
+  grid-area: 1/1;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.915;
+  transform: rotate(30deg);
+}
+.reveal::after {
+  opacity: 0.83;
+  transform: rotate(60deg);
+}
+
+@keyframes s3 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
